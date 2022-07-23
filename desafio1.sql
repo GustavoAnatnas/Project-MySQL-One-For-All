@@ -20,11 +20,11 @@ CREATE TABLE SpotifyClone.users(
     username CHAR(10) NOT NULL,
     user_age INT NOT NULL,
     created_in DATE NOT NULL,
-    plan_level INT NOT NULL,
-    FOREIGN KEY (plan_level) REFERENCES SpotifyClone.plans(plan_id)
+    plan_type INT NOT NULL,
+    FOREIGN KEY (plan_type) REFERENCES SpotifyClone.plans(plan_id)
 ) engine = InnoDB;
 
-INSERT INTO SpotifyClone.users (username, user_age, created_in, plan_level) 
+INSERT INTO SpotifyClone.users (username, user_age, created_in, plan_type) 
     VALUES 
         ('Thati', 23, '2019-10-20', 1),
         ('Cintia', 35, '2017-12-30', 2),
@@ -36,3 +36,66 @@ INSERT INTO SpotifyClone.users (username, user_age, created_in, plan_level)
         ('Carol', 19, '2018-02-14', 3),
         ('Angelina', 42, '2018-04-29', 2),
         ('Paul', 46, '2017-01-17', 2);
+
+CREATE TABLE SpotifyClone.artists(
+    artists_id INT PRIMARY KEY AUTO_INCREMENT,
+    artists_name VARCHAR(50) NOT NULL
+) engine = InnoDB;
+
+INSERT INTO SpotifyClone.artists (artists_name)
+    VALUES
+        ('Walter Phoenix'),
+        ('Peter Strong'),
+        ('Lance Day'),
+        ('Freedie Shannon'),
+        ('Tyler Isle'),
+        ('Fog');
+
+CREATE TABLE SpotifyClone.albums(
+    album_id INT PRIMARY KEY AUTO_INCREMENT,
+    album_name VARCHAR(50) NOT NULL,
+    album_release_date YEAR NOT NULL,
+    artist_id INT NOT NULL,
+    FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists(artists_id)
+) engine = InnoDB;
+
+INSERT INTO SpotifyClone.albums (album_name, album_release_date, artist_id) 
+    VALUES 
+        ('Envious', '1990', 1),
+        ('Exuberant', '1993', 1),
+        ('Hallowed Steam', '1995', 2),
+        ('Incandescent', '1998', 3),
+        ('Temporary Culture', '2001', 4),
+        ('Library of liberty', '2003', 4),
+        ('Chained Down', '2007', 5),
+        ('Cabinet of fools', '2012', 5),
+        ('No guarantees', '2015', 5),
+        ('Apparatus', '2015', 6);
+
+CREATE TABLE SpotifyClone.songs(
+    songs_id INT PRIMARY KEY AUTO_INCREMENT,
+    song_name VARCHAR(50) NOT NULL,
+    artist_id INT NOT NULL,
+    album_id INT NOT NULL,
+    FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists(artists_id),
+    FOREIGN KEY (album_id) REFERENCES SpotifyClone.albums(album_id)
+) engine = InnoDB;
+
+INSERT INTO SpotifyClone.songs(song_name, artist_id, album_id) 
+    VALUES 
+        ('Envious', 1, 1),
+        ('Exuberant', 1, 1),
+        ('Hallowed Steam', 2, 2),
+        ('Incandescent', 3, 3),
+        ('Temporary Culture', 4, 4),
+        ('Library of liberty', 4, 4),
+        ('Chained Down', 5, 5),
+        ('Cabinet of fools', 5, 5),
+        ('No guarantees', 5, 5),
+        ('Apparatus', 6, 6);
+
+
+
+
+
+
