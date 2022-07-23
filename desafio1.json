@@ -1,8 +1,8 @@
 {
     "coluna_usuario": "username",
     "tabela_que_contem_usuario": "users",
-    "coluna_plano": "plan_level",
-    "tabela_que_contem_plano": "plan",
+    "coluna_plano": "plan_type",
+    "tabela_que_contem_plano": "plans",
     "coluna_historico_de_reproducoes": "reproduction_history",
     "tabela_que_contem_historico_de_reproducoes": "history",
     "coluna_seguindo_artistas": "following_artists",
