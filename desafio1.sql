@@ -75,24 +75,55 @@ INSERT INTO SpotifyClone.albums (album_name, album_release_date, artist_id)
 CREATE TABLE SpotifyClone.songs(
     songs_id INT PRIMARY KEY AUTO_INCREMENT,
     song_name VARCHAR(50) NOT NULL,
+    songs_duration DECIMAL(8,0) NOT NULL,
     artist_id INT NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists(artists_id),
     FOREIGN KEY (album_id) REFERENCES SpotifyClone.albums(album_id)
 ) engine = InnoDB;
 
-INSERT INTO SpotifyClone.songs(song_name, artist_id, album_id) 
+INSERT INTO SpotifyClone.songs(song_name, songs_duration, artist_id, album_id) 
     VALUES 
-        ('Envious', 1, 1),
-        ('Exuberant', 1, 1),
-        ('Hallowed Steam', 2, 2),
-        ('Incandescent', 3, 3),
-        ('Temporary Culture', 4, 4),
-        ('Library of liberty', 4, 4),
-        ('Chained Down', 5, 5),
-        ('Cabinet of fools', 5, 5),
-        ('No guarantees', 5, 5),
-        ('Apparatus', 6, 6);
+        ("Soul For Us", 200, 1, 1),
+        ("Reflections Of Magic", 163,  1, 1),
+        ("Dance With Her Own", 116, 1, 1),
+        ("Troubles Of My Inner Fire", 203, 1, 2),
+        ("Time Fireworks", 152, 1, 2),
+        ("Magic Circus", 105, 2, 3),
+        ("Honey, So Do I", 207,  2, 3),
+        ("Sweetie, Let's Go Wild", 139, 2, 3),
+        ("She Knows", 244, 2, 3),
+        ("Fantasy For Me", 100, 3, 4),
+        ("Celebration Of More", 146,  3, 4),
+        ("Rock His Everything", 223, 3, 4),
+        ("Home Forever", 231, 3, 4),
+        ("Diamond Power" , 241, 3, 4),
+        ("Let's Be Silly", 132,  3, 4),
+        ("Thang Of Thunder", 240, 4, 5),
+        ("Words Of Her Life", 185,  4, 5),
+        ("Without My Streets", 176, 4, 5),
+        ("Need Of The Evening", 190, 4, 6),
+        ("History Of My Roses", 222, 4, 6),
+        ("Without My Love", 111, 4, 6),
+        ("Walking And Game", 123, 4, 6),
+        ("Young And Father", 197, 4, 6),
+        ("Finding My Traditions", 179, 5, 7),
+        ("Walking And Man", 229, 5, 7),
+        ("Hard And Time", 135, 5, 7),
+        ("Honey, I'm A Lone Wolf", 150, 5, 7),
+        ("I Know I Know", 166, 5, 8),
+        ("She Thinks I Won't Stay Tonight", 154, 5, 8),
+        ("He Heard You're Bad For Me", 210, 5, 8),
+        ("He Hopes We Can't Stay", 117, 5, 8),
+        ("He's Walking Away", 159, 5, 9),
+        ("He's Trouble", 138, 5, 9),
+        ("I Heard I Want To Bo Alone", 120, 5, 9),
+        ("I Ride Alone", 151, 5, 9),
+        ("Honey", 79, 6, 10),
+        ("You Cheated On Me", 95, 6, 10),
+        ("Wouldn't It Be Nice", 213, 6, 10),
+        ("Baby", 136, 6, 10),
+        ("You Make Me Feel So..", 83, 6, 10);
 
 
 
