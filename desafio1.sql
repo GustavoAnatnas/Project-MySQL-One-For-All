@@ -175,6 +175,37 @@ INSERT INTO SpotifyClone.history(history_songs, user_id, reproduction_date)
         (13, 10, "2017-12-25 01:03:57");
 
 
+CREATE TABLE SpotifyClone.following(
+    following_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    following_artists_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id),
+    FOREIGN KEY (following_artists_id) REFERENCES SpotifyClone.artists(artists_id)
+) engine = InnoDB;
 
+INSERT INTO SpotifyClone.following(user_id, following_artists_id)
+    VALUES
+        (1, 1),
+        (1, 4),
+        (1, 3),
+        (2, 1),
+        (2, 3),
+        (3, 2),
+        (3, 3),
+        (4, 4),
+        (5, 5),
+        (5, 6),
+        (6, 6),
+        (6, 3),
+        (6, 1),
+        (7, 2),
+        (7, 5),
+        (8, 1),
+        (8, 5),
+        (9, 6),
+        (9, 4),
+        (9, 3),
+        (10, 2),
+        (10, 6);  
 
 
