@@ -192,7 +192,7 @@ INSERT INTO SpotifyClone.following(user_id, artists_id)
         (2, 1),
         (2, 3),
         (3, 2),
-        (3, 3),
+        (3, 1),
         (4, 4),
         (5, 5),
         (5, 6),
@@ -207,6 +207,5 @@ INSERT INTO SpotifyClone.following(user_id, artists_id)
         (9, 4),
         (9, 3),
         (10, 2),
-        (10, 6);  
-
+        (10, 6);
 
